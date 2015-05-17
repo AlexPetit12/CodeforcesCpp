@@ -8,15 +8,18 @@ using namespace std;
 
 int main()
 {
-	int k, n;
-	scanf("%d %d", &n, &k);
+	long long int k, n;
+	scanf("%lld %lld", &n, &k);
 
-	if(k - ceil(double(n)/2) == 0)
+	if(k - (long long int)ceil(double(n)/2) == 0 && n % 2 == 1)
 				cout << n;
+	else if(k - (long long int)ceil(double(n)/2) == 0)
+		cout << 2 * k - 1;
 	else if(k <= n/2)
 		cout << 2 * k - 1;
 	else
-		cout << (k - ceil(double(n)/2)) * 2;
+		cout << (k - (long long int)(ceil(double(n)/2))) * 2;
 
 	return 0;
 }
+
